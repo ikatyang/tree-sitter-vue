@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="assets/tree-sitter-playground-0.15.9/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="assets/tree-sitter-playground-0.16.7/style.css" media="screen" type="text/css">
   <title>Tree-sitter Vue Playground</title>
 </head>
 
@@ -62,17 +62,23 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/codemirror.min.js"></script>
 
 <script>LANGUAGE_BASE_URL = "assets/tree-sitter-vue-0.1.0";</script>
-<script src="assets/web-tree-sitter-0.15.9/tree-sitter.js"></script>
+<script src="assets/web-tree-sitter-0.16.7/tree-sitter.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clusterize.js/0.18.0/clusterize.min.js"></script>
-<script src="assets/tree-sitter-playground-0.15.9/playground.js"></script>
+<script src="assets/tree-sitter-playground-0.16.7/playground.js"></script>
 
 <script>
-(codeExample => {
+((codeExample, queryExample) => {
   const handle = setInterval(() => {
     const $codeEditor = document.querySelector('.CodeMirror');
-    if ($codeEditor) {
+    const $queryEditor = document.querySelector('#query-container .CodeMirror');
+    const $queryCheckbox = document.querySelector('#query-checkbox');
+    if ($codeEditor && $queryEditor) {
       $codeEditor.CodeMirror.setValue(codeExample);
+      if (queryExample) {
+        $queryEditor.CodeMirror.setValue(queryExample);
+        if (!$queryCheckbox.checked) $queryCheckbox.click();
+      }
       clearInterval(handle);
     }
   }, 500);
@@ -99,8 +105,7 @@ p {
   font-size: 2em;
   text-align: center;
 }
-</style>
-`);
+</style>`, ``);
 </script>
 
     </main>

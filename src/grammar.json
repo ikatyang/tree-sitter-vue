@@ -593,10 +593,10 @@
                       "type": "SEQ",
                       "members": [
                         {
-                          "type": "PREC",
-                          "value": 1,
+                          "type": "IMMEDIATE_TOKEN",
                           "content": {
-                            "type": "IMMEDIATE_TOKEN",
+                            "type": "PREC",
+                            "value": 1,
                             "content": {
                               "type": "STRING",
                               "value": ":"
@@ -699,10 +699,10 @@
       ]
     },
     "directive_name": {
-      "type": "PREC",
-      "value": 1,
+      "type": "TOKEN",
       "content": {
-        "type": "TOKEN",
+        "type": "PREC",
+        "value": 1,
         "content": {
           "type": "PATTERN",
           "value": "v-[^<>'\"=\\/\\s:.]+"
@@ -710,10 +710,10 @@
       }
     },
     "directive_shorthand": {
-      "type": "PREC",
-      "value": 1,
+      "type": "TOKEN",
       "content": {
-        "type": "TOKEN",
+        "type": "PREC",
+        "value": 1,
         "content": {
           "type": "CHOICE",
           "members": [
@@ -744,10 +744,10 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "PREC",
-          "value": 1,
+          "type": "IMMEDIATE_TOKEN",
           "content": {
-            "type": "IMMEDIATE_TOKEN",
+            "type": "PREC",
+            "value": 1,
             "content": {
               "type": "STRING",
               "value": "["
@@ -788,10 +788,10 @@
         "type": "SEQ",
         "members": [
           {
-            "type": "PREC",
-            "value": 1,
+            "type": "IMMEDIATE_TOKEN",
             "content": {
-              "type": "IMMEDIATE_TOKEN",
+              "type": "PREC",
+              "value": 1,
               "content": {
                 "type": "STRING",
                 "value": "."

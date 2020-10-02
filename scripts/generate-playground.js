@@ -19,7 +19,7 @@ module.exports = {
     }
   }
 }
-<\\/script>
+</script>
 
 <style scoped>
 p {

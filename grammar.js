@@ -149,7 +149,7 @@ module.exports = grammar({
           seq(
             $.directive_name,
             optional(seq(
-              prec(1, token.immediate(":")),
+              token.immediate(prec(1, ":")),
               choice($.directive_argument, $.directive_dynamic_argument),
             )),
           ),
@@ -161,16 +161,16 @@ module.exports = grammar({
         optional($.directive_modifiers),
         optional(seq("=", choice($.attribute_value, $.quoted_attribute_value))),
       ),
-    directive_name: $ => prec(1, token(/v-[^<>'"=/\s:.]+/)),
-    directive_shorthand: $ => prec(1, token(choice(":", "@", "#"))),
+    directive_name: $ => token(prec(1, /v-[^<>'"=/\s:.]+/)),
+    directive_shorthand: $ => token(prec(1, choice(":", "@", "#"))),
     directive_argument: $ => token.immediate(/[^<>"'/=\s.]+/),
     directive_dynamic_argument: $ => seq(
-      prec(1, token.immediate("[")),
+      token.immediate(prec(1, "[")),
       optional($.directive_dynamic_argument_value),
       token.immediate("]"),
     ),
     directive_dynamic_argument_value: $ => token.immediate(/[^<>"'/=\s\]]+/),
-    directive_modifiers: $ => repeat1(seq(prec(1, token.immediate(".")), $.directive_modifier)),
+    directive_modifiers: $ => repeat1(seq(token.immediate(prec(1, ".")), $.directive_modifier)),
     directive_modifier: $ => token.immediate(/[^<>"'/=\s.]+/),
   },
 });
