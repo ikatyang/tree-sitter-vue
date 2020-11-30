@@ -1,3 +1,5 @@
+// based on https://github.com/tree-sitter/tree-sitter-html
+
 #include <tree_sitter/parser.h>
 #include <algorithm>
 #include <vector>
@@ -12,7 +14,13 @@ using std::vector;
 using std::string;
 
 enum TokenType {
-  TEXT_FRAGMENT, INTERPOLATION_TEXT, START_TAG_NAME, TEMPLATE_START_TAG_NAME,
+
+  // vue
+  TEXT_FRAGMENT,
+  INTERPOLATION_TEXT,
+  TEMPLATE_START_TAG_NAME,
+
+  START_TAG_NAME,
   SCRIPT_START_TAG_NAME,
   STYLE_START_TAG_NAME,
   END_TAG_NAME,
@@ -189,7 +197,13 @@ struct Scanner {
     Tag tag = Tag::for_name(tag_name);
     tags.push_back(tag);
     switch (tag.type) {
-      case TEMPLATE: lexer->result_symbol = TEMPLATE_START_TAG_NAME; break; case SCRIPT:
+
+      // vue
+      case TEMPLATE:
+        lexer->result_symbol = TEMPLATE_START_TAG_NAME;
+        break;
+
+      case SCRIPT:
         lexer->result_symbol = SCRIPT_START_TAG_NAME;
         break;
       case STYLE:
