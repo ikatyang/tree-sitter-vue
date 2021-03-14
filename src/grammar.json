@@ -459,7 +459,7 @@
     },
     "attribute_name": {
       "type": "PATTERN",
-      "value": "[^<>\"'=\\/\\s]+"
+      "value": "[^<>\"'=/\\s]+"
     },
     "attribute_value": {
       "type": "PATTERN",
@@ -705,7 +705,7 @@
         "value": 1,
         "content": {
           "type": "PATTERN",
-          "value": "v-[^<>'\"=\\/\\s:.]+"
+          "value": "v-[^<>'\"=/\\s:.]+"
         }
       }
     },
@@ -737,7 +737,7 @@
       "type": "IMMEDIATE_TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[^<>\"'\\/=\\s.]+"
+        "value": "[^<>\"'/=\\s.]+"
       }
     },
     "directive_dynamic_argument": {
@@ -779,7 +779,7 @@
       "type": "IMMEDIATE_TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[^<>\"'\\/=\\s\\]]+"
+        "value": "[^<>\"'/=\\s\\]]+"
       }
     },
     "directive_modifiers": {
@@ -809,7 +809,7 @@
       "type": "IMMEDIATE_TOKEN",
       "content": {
         "type": "PATTERN",
-        "value": "[^<>\"'\\/=\\s.]+"
+        "value": "[^<>\"'/=\\s.]+"
       }
     }
   },
@@ -820,6 +820,7 @@
     }
   ],
   "conflicts": [],
+  "precedences": [],
   "externals": [
     {
       "type": "SYMBOL",
