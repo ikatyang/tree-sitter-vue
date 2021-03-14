@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.2.0](https://github.com/ikatyang/tree-sitter-vue/compare/v0.1.0...v0.2.0) (2021-03-14)
+
+
+### Features
+
+* upgrade to tree-sitter@0.19.3 ([b74c6e0](https://github.com/ikatyang/tree-sitter-vue/commit/b74c6e0))
+
+
+### BREAKING CHANGES
+
+* require tree-sitter 0.19+
+
+
+
 # 0.1.0 (2019-10-04)
 
 
