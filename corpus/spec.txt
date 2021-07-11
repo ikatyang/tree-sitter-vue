@@ -86,6 +86,24 @@ Interpolations - Raw HTML (https://vuejs.org/v2/guide/syntax.html#Raw-HTML)
       (tag_name))))
 
 ================================================================================
+Template: Ignore content if language tag is given
+================================================================================
+
+<template lang="pug">
+div
+  | Some {{ inner }} pug here.
+  | Ignore <HTML /> <tags/> here
+</template>
+
+--------------------------------------------------------------------------------
+
+(component
+  (template_element
+    (start_tag
+    (tag_name) (attribute (attribute_name) (quoted_attribute_value (attribute_value))))
+    (raw_text) (end_tag (tag_name))))
+
+================================================================================
 Interpolations - Attributes (https://vuejs.org/v2/guide/syntax.html#Attributes)
 ================================================================================
 

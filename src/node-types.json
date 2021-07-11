@@ -364,6 +364,10 @@
           "named": true
         },
         {
+          "type": "raw_text",
+          "named": true
+        },
+        {
           "type": "script_element",
           "named": true
         },
