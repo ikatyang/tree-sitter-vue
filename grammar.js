@@ -49,10 +49,17 @@ module.exports = grammar({
       $.self_closing_tag,
     ),
 
-    template_element: $ => seq(
-      alias($.template_start_tag, $.start_tag),
-      repeat($._node),
-      $.end_tag,
+    template_element: $ => choice(
+      seq(
+        alias($.template2_start_tag, $.start_tag),
+        optional($.raw_text),
+        $.end_tag,
+      ),
+      seq(
+        alias($.template_start_tag, $.start_tag),
+        repeat($._node),
+        $.end_tag,
+      )
     ),
 
     script_element: $ => seq(
@@ -77,6 +84,12 @@ module.exports = grammar({
     template_start_tag: $ => seq(
       "<",
       alias($._template_start_tag_name, $.tag_name),
+      ">",
+    ),
+    template2_start_tag: $ => seq(
+      "<",
+      alias($._template_start_tag_name, $.tag_name),
+      $.attribute,
       repeat(choice($.attribute, $.directive_attribute)),
       ">",
     ),
