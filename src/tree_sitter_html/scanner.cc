@@ -124,7 +124,10 @@ struct Scanner {
 
     const string &end_delimiter = tags.back().type == SCRIPT
       ? "</SCRIPT"
-      : "</STYLE";
+      : (
+          tags.back().type == TEMPLATE ?
+          "</TEMPLATE" :
+          "</STYLE");
 
     unsigned delimiter_index = 0;
     while (lexer->lookahead) {
