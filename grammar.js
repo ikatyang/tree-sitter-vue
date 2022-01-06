@@ -49,10 +49,17 @@ module.exports = grammar({
       $.self_closing_tag,
     ),
 
-    template_element: $ => seq(
-      alias($.template_start_tag, $.start_tag),
-      repeat($._node),
-      $.end_tag,
+    template_element: $ => choice(
+      seq(
+        alias($.template_start_tag, $.start_tag),
+        repeat($._node),
+        $.end_tag,
+      ),
+      seq(
+        alias($.template_start_tag_with_lang, $.start_tag),
+        optional($.raw_text),
+        $.end_tag,
+      ),
     ),
 
     script_element: $ => seq(
@@ -78,6 +85,12 @@ module.exports = grammar({
       "<",
       alias($._template_start_tag_name, $.tag_name),
       repeat(choice($.attribute, $.directive_attribute)),
+      ">",
+    ),
+    template_start_tag_with_lang: $ => seq(
+      "<",
+      alias($._template_start_tag_name, $.tag_name),
+      alias($.lang_attribute, $.attribute),
       ">",
     ),
 
@@ -116,6 +129,16 @@ module.exports = grammar({
 
     attribute: $ => seq(
       $.attribute_name,
+      optional(seq(
+        "=",
+        choice(
+          $.attribute_value,
+          $.quoted_attribute_value,
+        ),
+      )),
+    ),
+    lang_attribute: $ => seq(
+      alias("lang", $.attribute_name),
       optional(seq(
         "=",
         choice(
