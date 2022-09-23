@@ -1,6 +1,5 @@
 /build
 /node_modules
 
-/Cargo.toml
 /target
 Cargo.lock
