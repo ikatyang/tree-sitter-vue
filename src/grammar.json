@@ -46,6 +46,14 @@
         },
         {
           "type": "SYMBOL",
+          "name": "suspense"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "vue_component"
+        },
+        {
+          "type": "SYMBOL",
           "name": "element"
         },
         {
@@ -63,6 +71,170 @@
         {
           "type": "SYMBOL",
           "name": "erroneous_end_tag"
+        }
+      ]
+    },
+    "suspense_props": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "timeout"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SEQ",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "="
+                    },
+                    {
+                      "type": "CHOICE",
+                      "members": [
+                        {
+                          "type": "SYMBOL",
+                          "name": "attribute_value"
+                        },
+                        {
+                          "type": "SYMBOL",
+                          "name": "quoted_attribute_value"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "suspense": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "<Suspense"
+            },
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "ALIAS",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "suspense_props"
+                    },
+                    "named": true,
+                    "value": "props"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "attribute"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "directive_attribute"
+                  }
+                ]
+              }
+            },
+            {
+              "type": "STRING",
+              "value": ">"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_node"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "</Suspense>"
+        }
+      ]
+    },
+    "vue_component": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "<component"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": ":"
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "is="
+                },
+                {
+                  "type": "BLANK"
+                }
+              ]
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "attribute_value"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "quoted_attribute_value"
+                }
+              ]
+            },
+            {
+              "type": "STRING",
+              "value": ">"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_node"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "</component>"
         }
       ]
     },
