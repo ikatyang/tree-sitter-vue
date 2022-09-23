@@ -5,7 +5,7 @@
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
 #endif
 
-#define LANGUAGE_VERSION 13
+#define LANGUAGE_VERSION 14
 #define STATE_COUNT 190
 #define LARGE_STATE_COUNT 2
 #define SYMBOL_COUNT 59
@@ -77,7 +77,7 @@ enum {
   aux_sym_directive_modifiers_repeat1 = 58,
 };
 
-static const char *ts_symbol_names[] = {
+static const char * const ts_symbol_names[] = {
   [ts_builtin_sym_end] = "end",
   [anon_sym_LT] = "<",
   [anon_sym_GT] = ">",
@@ -139,7 +139,7 @@ static const char *ts_symbol_names[] = {
   [aux_sym_directive_modifiers_repeat1] = "directive_modifiers_repeat1",
 };
 
-static TSSymbol ts_symbol_map[] = {
+static const TSSymbol ts_symbol_map[] = {
   [ts_builtin_sym_end] = ts_builtin_sym_end,
   [anon_sym_LT] = anon_sym_LT,
   [anon_sym_GT] = anon_sym_GT,
@@ -440,12 +440,205 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   },
 };
 
-static TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE_LENGTH] = {
+static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE_LENGTH] = {
   [0] = {0},
 };
 
-static uint16_t ts_non_terminal_alias_map[] = {
+static const uint16_t ts_non_terminal_alias_map[] = {
   0,
+};
+
+static const TSStateId ts_primary_state_ids[STATE_COUNT] = {
+  [0] = 0,
+  [1] = 1,
+  [2] = 2,
+  [3] = 3,
+  [4] = 3,
+  [5] = 2,
+  [6] = 2,
+  [7] = 3,
+  [8] = 8,
+  [9] = 8,
+  [10] = 10,
+  [11] = 11,
+  [12] = 10,
+  [13] = 8,
+  [14] = 10,
+  [15] = 11,
+  [16] = 16,
+  [17] = 17,
+  [18] = 18,
+  [19] = 18,
+  [20] = 20,
+  [21] = 21,
+  [22] = 22,
+  [23] = 23,
+  [24] = 20,
+  [25] = 25,
+  [26] = 26,
+  [27] = 27,
+  [28] = 22,
+  [29] = 22,
+  [30] = 26,
+  [31] = 21,
+  [32] = 26,
+  [33] = 33,
+  [34] = 34,
+  [35] = 27,
+  [36] = 36,
+  [37] = 37,
+  [38] = 38,
+  [39] = 25,
+  [40] = 40,
+  [41] = 33,
+  [42] = 42,
+  [43] = 43,
+  [44] = 44,
+  [45] = 45,
+  [46] = 46,
+  [47] = 23,
+  [48] = 48,
+  [49] = 49,
+  [50] = 50,
+  [51] = 51,
+  [52] = 52,
+  [53] = 53,
+  [54] = 43,
+  [55] = 55,
+  [56] = 56,
+  [57] = 57,
+  [58] = 58,
+  [59] = 59,
+  [60] = 60,
+  [61] = 61,
+  [62] = 62,
+  [63] = 63,
+  [64] = 64,
+  [65] = 65,
+  [66] = 44,
+  [67] = 67,
+  [68] = 68,
+  [69] = 69,
+  [70] = 45,
+  [71] = 40,
+  [72] = 72,
+  [73] = 42,
+  [74] = 74,
+  [75] = 75,
+  [76] = 56,
+  [77] = 52,
+  [78] = 59,
+  [79] = 79,
+  [80] = 49,
+  [81] = 51,
+  [82] = 82,
+  [83] = 50,
+  [84] = 55,
+  [85] = 60,
+  [86] = 86,
+  [87] = 87,
+  [88] = 88,
+  [89] = 61,
+  [90] = 90,
+  [91] = 53,
+  [92] = 62,
+  [93] = 93,
+  [94] = 63,
+  [95] = 67,
+  [96] = 68,
+  [97] = 74,
+  [98] = 72,
+  [99] = 99,
+  [100] = 58,
+  [101] = 69,
+  [102] = 102,
+  [103] = 65,
+  [104] = 64,
+  [105] = 105,
+  [106] = 106,
+  [107] = 107,
+  [108] = 108,
+  [109] = 108,
+  [110] = 110,
+  [111] = 111,
+  [112] = 112,
+  [113] = 105,
+  [114] = 110,
+  [115] = 93,
+  [116] = 79,
+  [117] = 107,
+  [118] = 118,
+  [119] = 112,
+  [120] = 111,
+  [121] = 106,
+  [122] = 108,
+  [123] = 82,
+  [124] = 90,
+  [125] = 86,
+  [126] = 118,
+  [127] = 87,
+  [128] = 88,
+  [129] = 68,
+  [130] = 49,
+  [131] = 51,
+  [132] = 59,
+  [133] = 133,
+  [134] = 134,
+  [135] = 56,
+  [136] = 134,
+  [137] = 133,
+  [138] = 67,
+  [139] = 50,
+  [140] = 60,
+  [141] = 55,
+  [142] = 61,
+  [143] = 62,
+  [144] = 133,
+  [145] = 134,
+  [146] = 63,
+  [147] = 147,
+  [148] = 148,
+  [149] = 149,
+  [150] = 149,
+  [151] = 151,
+  [152] = 152,
+  [153] = 153,
+  [154] = 149,
+  [155] = 155,
+  [156] = 156,
+  [157] = 147,
+  [158] = 158,
+  [159] = 149,
+  [160] = 148,
+  [161] = 161,
+  [162] = 152,
+  [163] = 158,
+  [164] = 151,
+  [165] = 165,
+  [166] = 148,
+  [167] = 156,
+  [168] = 149,
+  [169] = 156,
+  [170] = 149,
+  [171] = 171,
+  [172] = 172,
+  [173] = 173,
+  [174] = 174,
+  [175] = 172,
+  [176] = 176,
+  [177] = 173,
+  [178] = 178,
+  [179] = 179,
+  [180] = 180,
+  [181] = 174,
+  [182] = 178,
+  [183] = 183,
+  [184] = 176,
+  [185] = 180,
+  [186] = 183,
+  [187] = 180,
+  [188] = 183,
+  [189] = 171,
 };
 
 static inline bool sym_directive_name_character_set_1(int32_t c) {
@@ -460,6 +653,20 @@ static inline bool sym_directive_name_character_set_1(int32_t c) {
         ? c == '\''
         : c <= '/')
       : (c <= ':' || (c >= '<' && c <= '>')))));
+}
+
+static inline bool sym_directive_dynamic_argument_value_character_set_1(int32_t c) {
+  return (c < '"'
+    ? (c < '\r'
+      ? (c < '\t'
+        ? c == 0
+        : c <= '\n')
+      : (c <= '\r' || c == ' '))
+    : (c <= '"' || (c < '<'
+      ? (c < '/'
+        ? c == '\''
+        : c <= '/')
+      : (c <= '>' || c == ']'))));
 }
 
 static bool ts_lex(TSLexer *lexer, TSStateId state) {
@@ -778,16 +985,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 40:
       ACCEPT_TOKEN(sym_directive_dynamic_argument_value);
-      if (lookahead != 0 &&
-          lookahead != '\t' &&
-          lookahead != '\n' &&
-          lookahead != '\r' &&
-          lookahead != ' ' &&
-          lookahead != '"' &&
-          lookahead != '\'' &&
-          lookahead != '/' &&
-          (lookahead < '<' || '>' < lookahead) &&
-          lookahead != ']') ADVANCE(40);
+      if (!sym_directive_dynamic_argument_value_character_set_1(lookahead)) ADVANCE(40);
       END_STATE();
     case 41:
       ACCEPT_TOKEN(anon_sym_DOT);
@@ -797,7 +995,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
   }
 }
 
-static TSLexMode ts_lex_modes[STATE_COUNT] = {
+static const TSLexMode ts_lex_modes[STATE_COUNT] = {
   [0] = {.lex_state = 0, .external_lex_state = 1},
   [1] = {.lex_state = 0, .external_lex_state = 2},
   [2] = {.lex_state = 0, .external_lex_state = 3},
@@ -1005,7 +1203,7 @@ enum {
   ts_external_token_comment = 11,
 };
 
-static TSSymbol ts_external_scanner_symbol_map[EXTERNAL_TOKEN_COUNT] = {
+static const TSSymbol ts_external_scanner_symbol_map[EXTERNAL_TOKEN_COUNT] = {
   [ts_external_token__text_fragment] = sym__text_fragment,
   [ts_external_token__interpolation_text] = sym__interpolation_text,
   [ts_external_token__start_tag_name] = sym__start_tag_name,
@@ -1020,7 +1218,7 @@ static TSSymbol ts_external_scanner_symbol_map[EXTERNAL_TOKEN_COUNT] = {
   [ts_external_token_comment] = sym_comment,
 };
 
-static bool ts_external_scanner_states[13][EXTERNAL_TOKEN_COUNT] = {
+static const bool ts_external_scanner_states[13][EXTERNAL_TOKEN_COUNT] = {
   [1] = {
     [ts_external_token__text_fragment] = true,
     [ts_external_token__interpolation_text] = true,
@@ -1082,7 +1280,7 @@ static bool ts_external_scanner_states[13][EXTERNAL_TOKEN_COUNT] = {
   },
 };
 
-static uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
+static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [0] = {
     [ts_builtin_sym_end] = ACTIONS(1),
     [anon_sym_LT] = ACTIONS(1),
@@ -1130,7 +1328,7 @@ static uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   },
 };
 
-static uint16_t ts_small_parse_table[] = {
+static const uint16_t ts_small_parse_table[] = {
   [0] = 13,
     ACTIONS(9), 1,
       anon_sym_LT,
@@ -3024,7 +3222,7 @@ static uint16_t ts_small_parse_table[] = {
       anon_sym_SQUOTE,
 };
 
-static uint32_t ts_small_parse_table_map[] = {
+static const uint32_t ts_small_parse_table_map[] = {
   [SMALL_STATE(2)] = 0,
   [SMALL_STATE(3)] = 48,
   [SMALL_STATE(4)] = 96,
@@ -3215,7 +3413,7 @@ static uint32_t ts_small_parse_table_map[] = {
   [SMALL_STATE(189)] = 2517,
 };
 
-static TSParseActionEntry ts_parse_actions[] = {
+static const TSParseActionEntry ts_parse_actions[] = {
   [0] = {.entry = {.count = 0, .reusable = false}},
   [1] = {.entry = {.count = 1, .reusable = false}}, RECOVER(),
   [3] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_component, 0),
@@ -3464,7 +3662,7 @@ void tree_sitter_vue_external_scanner_deserialize(void *, const char *, unsigned
 #endif
 
 extern const TSLanguage *tree_sitter_vue(void) {
-  static TSLanguage language = {
+  static const TSLanguage language = {
     .version = LANGUAGE_VERSION,
     .symbol_count = SYMBOL_COUNT,
     .alias_count = ALIAS_COUNT,
@@ -3475,19 +3673,19 @@ extern const TSLanguage *tree_sitter_vue(void) {
     .production_id_count = PRODUCTION_ID_COUNT,
     .field_count = FIELD_COUNT,
     .max_alias_sequence_length = MAX_ALIAS_SEQUENCE_LENGTH,
-    .parse_table = (const uint16_t *)ts_parse_table,
-    .small_parse_table = (const uint16_t *)ts_small_parse_table,
-    .small_parse_table_map = (const uint32_t *)ts_small_parse_table_map,
+    .parse_table = &ts_parse_table[0][0],
+    .small_parse_table = ts_small_parse_table,
+    .small_parse_table_map = ts_small_parse_table_map,
     .parse_actions = ts_parse_actions,
     .symbol_names = ts_symbol_names,
     .symbol_metadata = ts_symbol_metadata,
     .public_symbol_map = ts_symbol_map,
     .alias_map = ts_non_terminal_alias_map,
-    .alias_sequences = (const TSSymbol *)ts_alias_sequences,
+    .alias_sequences = &ts_alias_sequences[0][0],
     .lex_modes = ts_lex_modes,
     .lex_fn = ts_lex,
     .external_scanner = {
-      (const bool *)ts_external_scanner_states,
+      &ts_external_scanner_states[0][0],
       ts_external_scanner_symbol_map,
       tree_sitter_vue_external_scanner_create,
       tree_sitter_vue_external_scanner_destroy,
@@ -3495,6 +3693,7 @@ extern const TSLanguage *tree_sitter_vue(void) {
       tree_sitter_vue_external_scanner_serialize,
       tree_sitter_vue_external_scanner_deserialize,
     },
+    .primary_state_ids = ts_primary_state_ids,
   };
   return &language;
 }
