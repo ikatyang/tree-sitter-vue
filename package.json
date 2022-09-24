@@ -4,7 +4,8 @@
   "description": "Vue grammar for tree-sitter",
   "keywords": [
     "parser",
-    "lexer"
+    "lexer",
+    "syntax highlight"
   ],
   "main": "bindings/node",
   "repository": "https://github.com/ikatyang/tree-sitter-vue",
@@ -40,5 +41,14 @@
     "/binding.gyp",
     "/grammar.js",
     "/ThirdPartyNoticeText.txt"
+  ],
+  "tree-sitter": [
+    {
+      "scope": "text.vue.basic",
+      "file-types": [
+        "vue"
+      ],
+      "injection-regex": "vue"
+    }
   ]
 }

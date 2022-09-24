@@ -1,0 +1,46 @@
+================================================================================
+Style - style scss (https://cn.vuejs.org/api/sfc-spec.html#pre-processors)
+================================================================================
+
+<style lang="scss">
+.id{
+  background:red;
+}
+</style>
+
+-------------------------------------------------------------------------------
+
+(component
+  (style_element
+    (start_tag
+      (tag_name)
+      (style_lang 
+        (scss_val)))
+    (raw_text)
+    (end_tag
+      (tag_name))
+  ))
+
+================================================================================
+Style - style css 
+================================================================================
+
+<style lang="css">
+.id{
+  background:red;
+  @include ads();
+}
+</style>
+
+-------------------------------------------------------------------------------
+
+(component
+  (style_element
+    (start_tag
+      (tag_name)
+      (style_lang 
+        (css_val)))
+    (raw_text)
+    (end_tag
+      (tag_name))
+  ))

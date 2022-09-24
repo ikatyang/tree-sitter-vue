@@ -513,3 +513,88 @@ Shorthands - v-on Shorthand (https://vuejs.org/v2/guide/syntax.html#v-on-Shortha
     (text)
     (end_tag
       (tag_name))))
+
+
+================================================================================
+BuildIn-component - suspense (https://vuejs.org/v2/guide/syntax.html#v-on-Shorthand)
+================================================================================
+
+<template>
+  <Suspense data-id="1">asd</Suspense>
+</template>
+
+--------------------------------------------------------------------------------
+
+(component
+  (template_element
+    (start_tag
+      (tag_name))
+    (text)
+    (suspense
+       (attribute
+        (attribute_name)
+        (quoted_attribute_value
+          (attribute_value)))
+      (text)
+    )
+    (text)
+    (end_tag
+      (tag_name))
+  )
+)
+
+================================================================================
+BuildIn-component - suspense props (https://vuejs.org/v2/guide/syntax.html#v-on-Shorthand)
+================================================================================
+
+<template>
+  <Suspense timeout="1">asd</Suspense>
+</template>
+
+--------------------------------------------------------------------------------
+
+(component
+  (template_element
+    (start_tag
+      (tag_name))
+    (text)
+    (suspense
+      (props
+        (quoted_attribute_value
+          (attribute_value)))
+      (text)
+    )
+    (text)
+    (end_tag
+      (tag_name))
+  )
+)
+
+
+================================================================================
+BuildIn-component - component (https://vuejs.org/v2/guide/syntax.html#v-on-Shorthand)
+================================================================================
+
+<template>
+  <component is="dog">sss</component>
+</template>
+
+--------------------------------------------------------------------------------
+
+(component
+  (template_element
+    (start_tag
+      (tag_name))
+    (text)
+    (vue_component
+      (quoted_attribute_value
+        (attribute_value))
+      (text)
+    )
+    (text)
+    (end_tag
+      (tag_name))
+  )
+)
+
+
