@@ -437,6 +437,80 @@
         }
       ]
     },
+    "ts_lang": {
+      "type": "STRING",
+      "value": "ts"
+    },
+    "tsx_lang": {
+      "type": "STRING",
+      "value": "tsx"
+    },
+    "script_lang": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "lang="
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "'"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "tsx_lang"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "ts_lang"
+                    }
+                  ]
+                },
+                {
+                  "type": "STRING",
+                  "value": "'"
+                }
+              ]
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "\""
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "tsx_lang"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "ts_lang"
+                    }
+                  ]
+                },
+                {
+                  "type": "STRING",
+                  "value": "\""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "script_start_tag": {
       "type": "SEQ",
       "members": [
@@ -460,6 +534,10 @@
             "members": [
               {
                 "type": "SYMBOL",
+                "name": "script_lang"
+              },
+              {
+                "type": "SYMBOL",
                 "name": "attribute"
               },
               {
@@ -472,6 +550,80 @@
         {
           "type": "STRING",
           "value": ">"
+        }
+      ]
+    },
+    "scss_val": {
+      "type": "PATTERN",
+      "value": "(scss)|(sass)"
+    },
+    "css_val": {
+      "type": "STRING",
+      "value": "css"
+    },
+    "style_lang": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "lang="
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "'"
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "css_val"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "scss_val"
+                    }
+                  ]
+                },
+                {
+                  "type": "STRING",
+                  "value": "'"
+                }
+              ]
+            },
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "\""
+                },
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "SYMBOL",
+                      "name": "css_val"
+                    },
+                    {
+                      "type": "SYMBOL",
+                      "name": "scss_val"
+                    }
+                  ]
+                },
+                {
+                  "type": "STRING",
+                  "value": "\""
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -496,6 +648,10 @@
           "content": {
             "type": "CHOICE",
             "members": [
+              {
+                "type": "SYMBOL",
+                "name": "style_lang"
+              },
               {
                 "type": "SYMBOL",
                 "name": "attribute"

@@ -294,6 +294,25 @@
     }
   },
   {
+    "type": "script_lang",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "ts_lang",
+          "named": true
+        },
+        {
+          "type": "tsx_lang",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "self_closing_tag",
     "named": true,
     "fields": {},
@@ -333,6 +352,14 @@
           "named": true
         },
         {
+          "type": "script_lang",
+          "named": true
+        },
+        {
+          "type": "style_lang",
+          "named": true
+        },
+        {
           "type": "tag_name",
           "named": true
         }
@@ -357,6 +384,25 @@
         },
         {
           "type": "start_tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "style_lang",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "css_val",
+          "named": true
+        },
+        {
+          "type": "scss_val",
           "named": true
         }
       ]
@@ -621,6 +667,10 @@
     "named": true
   },
   {
+    "type": "css_val",
+    "named": true
+  },
+  {
     "type": "directive_dynamic_argument_value",
     "named": true
   },
@@ -637,7 +687,15 @@
     "named": false
   },
   {
+    "type": "lang=",
+    "named": false
+  },
+  {
     "type": "raw_text",
+    "named": true
+  },
+  {
+    "type": "scss_val",
     "named": true
   },
   {
@@ -647,6 +705,14 @@
   {
     "type": "timeout",
     "named": false
+  },
+  {
+    "type": "ts_lang",
+    "named": true
+  },
+  {
+    "type": "tsx_lang",
+    "named": true
   },
   {
     "type": "{{",

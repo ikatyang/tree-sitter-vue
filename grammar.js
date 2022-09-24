@@ -122,20 +122,39 @@ module.exports = grammar({
         repeat(choice($.attribute, $.directive_attribute)),
         ">"
       ),
-
+    ts_lang: ($) => "ts",
+    tsx_lang: ($) => "tsx",
+    script_lang: ($) =>
+      seq(
+        "lang=",
+        choice(
+          seq("'", choice($.tsx_lang, $.ts_lang), "'"),
+          seq('"', choice($.tsx_lang, $.ts_lang), '"')
+        )
+      ),
     script_start_tag: ($) =>
       seq(
         "<",
         alias($._script_start_tag_name, $.tag_name),
-        repeat(choice($.attribute, $.directive_attribute)),
+        repeat(choice($.script_lang, $.attribute, $.directive_attribute)),
         ">"
       ),
 
+    scss_val: ($) => /(scss)|(sass)/,
+    css_val: ($) => "css",
+    style_lang: ($) =>
+      seq(
+        "lang=",
+        choice(
+          seq("'", choice($.css_val, $.scss_val), "'"),
+          seq('"', choice($.css_val, $.scss_val), '"')
+        )
+      ),
     style_start_tag: ($) =>
       seq(
         "<",
         alias($._style_start_tag_name, $.tag_name),
-        repeat(choice($.attribute, $.directive_attribute)),
+        repeat(choice($.style_lang, $.attribute, $.directive_attribute)),
         ">"
       ),
 
