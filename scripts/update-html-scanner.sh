@@ -4,4 +4,4 @@ sed -e "s/ START_TAG_NAME,/ TEXT_FRAGMENT, INTERPOLATION_TEXT, START_TAG_NAME, T
     -e 's/"<\/script"/"<\/SCRIPT"/' \
     -e 's/"<\/style"/"<\/STYLE"/' \
     -e "s/lexer->lookahead == end_deli/towupper(lexer->lookahead) == end_deli/" \
-    ./node_modules/tree-sitter-html/src/scanner.cc > ./src/tree_sitter_html/scanner.cc
+    ./node_modules/tree-sitter-html/src/scanner.c >./src/tree_sitter_html/scanner.c
